@@ -7,7 +7,7 @@ const controller = {
             res.render ('product' , {product:reqObj}) // renderiza la pag con el producto como dato
             break;
             } else {
-                if (i == products.length -1 && products[i].id != req.params.productid) {console.log ('no tenemos el plato solicitado')}
+                if (i == products.length -1 && products[i].id != req.params.productid) {res.send ('no tenemos el plato solicitado')}
                 } // Si i ya esta en el ultimo lugar Y aun asi no se encontro el id solicitado en la ruta hace un console diciendo que no tenemos el plato
         }
        }
