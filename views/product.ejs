@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+ <%- include('./partials/header.ejs') %>
+ <h1 class="detail-title"> <%= product.name %> </h1>
+ <p class="detail-description"> <%= product.description %> </p>
+ <div><img src="/images/<%= product.image%>" class="img-detail" alt="<%= product.name %>" ></div>
+ <p class="detail-price"> <%= product.price %> </p>
+ <%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>
