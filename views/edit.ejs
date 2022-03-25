@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head.ejs') %>
+<body>
+<h1>Datos del producto</h1>
+
+<h3>Nombre</h3>
+<p> <%= product.name %> </p> <br>
+<h3>descripcion</h3>
+<p> <%= product.description %> </p> <Br>
+<h3>precio</h3>
+<p> <%= product.price %> </p> <Br>
+<h3>imagen</h3>
+<img src="/images/<%= product.image %>" alt="<%= product.name %>">
+<form action="/users/editsave?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%= product.name %>"> <br>
+    <input type="text" name="price" value="<%= product.price %>"> <br>
+    <input type="submit" value="edit">
+</form>
+</body>
+<html>

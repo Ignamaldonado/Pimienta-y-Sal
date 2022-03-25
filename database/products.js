@@ -1,12 +1,12 @@
 const products = [{
-    id: 1,
+    id: 2,
     name: 'Carpaccio fresco',
     description:'Entrada de Carpaccio de salmon con citricos',
     price: 'U$S 65.50',
     image: 'Carpaccio-de-salmon.jpg',
 },
 {
-    id: 2,
+    id: 1,
     name: 'Risotto de berenjena',
     description:'Risotto de berenjena y queso de cabra',
     price: 'U$S 47.00',

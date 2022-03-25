@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/head.ejs') %>
+    <body>
+<h1>Elija plato para modificar</h1>
+<form action="/Searcheditproduct" method="get">
+    <h2>Buscar plato</h2>
+    <input type="text" name="query">
+    <input type="submit" value="Search">
+
+<h1>Platos encontrados</h1>
+<% for (i = 0; i < products.length; i++) { %>
+    <h4><a href="/detail/<%= products[i].id %>/edit %>">
+      <%= products[i].name %> </a></h4>
+      <img src="/images/<%= products[i].image %>" alt="<%= products [i].name %>" />
+      <p class="ps-text-grey">
+        <%= products[i].description + ' ' + products[i].price %>
+      </p>
+  <% } %>
+  </form>
+    </body>
+</html>

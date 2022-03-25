@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/head.ejs') %>
+  <body>
+    
+<%- include ('./partials/header.ejs') %>
+
+    <!-- Page content -->
+    <div class="ps-content">
+      <!-- About Section -->
+      <div class="ps-row ps-padding-64" id="about">
+      
+      </div>
+
+
+      <hr />
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center">Platos encontrados</h1>
+          <br />
+          <% for (i = 0; i < products.length; i++) { %>
+            <h4><a href="/detail/ <%= products[i].id %> ">
+              <%= products[i].name %> </a></h4>
+              <img src="/images/<%= products[i].image %>" alt="<%= products [i].name %>" />
+              <p class="ps-text-grey">
+                <%= products[i].description + ' ' + products[i].price %>
+              </p>
+          <% } %>
+        </div>
+
+      </div>
+
+      <!-- FORMULARIO QUERY, EL NAME DEL TEXT SON LAS PROPIEDADES DEL QUERY! -->
+      <form action="/search" method="get">
+        <h2>Buscar plato</h2>
+        <input type="text" name="query">
+        <input type="submit" value="Search">
+      </form>
+
+
+      <!-- Footer -->
+      <%- include ('./partials/footer.ejs') %>
+    </div>
+  </body>
+</html>

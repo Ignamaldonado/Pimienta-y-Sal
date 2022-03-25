@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override') // NUEVO NO ESTA es para los metodos put y delete
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -19,14 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method')); //NUEVO NO ESTA es para los metodos put y delete
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/detail' , detailRouter)
 
-// catch 404 and forward to error handler
+// 404 error
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).send('no se encontro capo');
 });
 
 // error handler

@@ -47,9 +47,13 @@
         <div class="ps-col l6 ps-padding-large">
           <h1 class="ps-center">Nuestro Menu</h1>
           <br />
-          <% products.forEach(product => { %>
-          <%- include ('./partials/products' , {product: product})%>
-          <% }) %>
+          <% for (i = 0; i < products.length; i++) { %>
+            <h4><a href="/detail/ <%= products[i].id %> ">
+              <%= products[i].name %> </a></h4>
+              <p class="ps-text-grey">
+                <%= products[i].description + ' ' + products[i].price %>
+              </p>
+          <% } %>
         </div>
 
         <div class="ps-col l6 ps-padding-large ps-img-menu">
@@ -60,6 +64,16 @@
           />
         </div>
       </div>
+
+      <!-- FORMULARIO QUERY, EL NAME DEL TEXT SON LAS PROPIEDADES DEL QUERY! -->
+      <form action="/search" method="get">
+        <h2>Buscar plato</h2>
+        <input type="text" name="query">
+        <input type="submit" value="Search">
+      </form>
+
+      <a href="/searchedit">Editar productos</a>
+
 
       <!-- Footer -->
       <%- include ('./partials/footer.ejs') %>
